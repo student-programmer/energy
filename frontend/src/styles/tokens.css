@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  /* Fonts */
+  --font-display: "Montserrat", "Segoe UI", sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Navy palette */
+  --navy-950: #04121F;
+  --navy-900: #061C36;
+  --navy-800: #0B273F;
+  --navy-700: #12354F;
+  --navy-600: #1B4568;
+  --navy-500: #2C5C85;
+  --navy-400: #4A7CA6;
+
+  /* Solar palette */
+  --solar-700: #C98700;
+  --solar-600: #E8A200;
+  --solar-500: #FEB813;
+  --solar-400: #FFC93F;
+  --solar-300: #FFDD84;
+  --solar-100: #FFF1CE;
+  --solar-50:  #FFFAEE;
+
+  /* Neutrals */
+  --n-0:   #FFFFFF;
+  --n-25:  #F9FBFD;
+  --n-50:  #F3F6FA;
+  --n-100: #EBEFF5;
+  --n-200: #D7DEE8;
+  --n-300: #B9C4D2;
+  --n-400: #9BA8B9;
+  --n-500: #76859A;
+  --n-600: #5B6B80;
+  --n-700: #3F4E61;
+
+  /* Status */
+  --ok-500:   #1BA97A;
+  --ok-100:   #E1F5EE;
+  --err-500:  #E24B4B;
+  --err-100:  #FBE6E6;
+
+  /* Text */
+  --text-strong:     var(--navy-900);
+  --text-body:       var(--navy-800);
+  --text-muted:      var(--n-600);
+  --text-faint:      var(--n-400);
+  --text-inverse:    var(--n-0);
+  --text-accent:     var(--solar-700);
+  --text-link:       var(--navy-700);
+  --text-link-hover: var(--solar-700);
+
+  /* Surfaces */
+  --surface-page:        var(--n-0);
+  --surface-subtle:      var(--n-50);
+  --surface-card:        var(--n-0);
+  --surface-inverse:     var(--navy-900);
+  --surface-inverse-alt: var(--navy-800);
+  --surface-accent:      var(--solar-500);
+  --surface-accent-soft: var(--solar-100);
+
+  /* Borders */
+  --border-subtle:  var(--n-100);
+  --border-default: var(--n-200);
+  --border-strong:  var(--n-300);
+  --border-inverse: rgba(255,255,255,.14);
+  --border-accent:  var(--solar-500);
+
+  /* Gradients */
+  --grad-night:   linear-gradient(180deg,#0B273F 0%,#04121F 100%);
+  --grad-panel:   linear-gradient(135deg,#17395C 0%,#0B273F 60%,#061C36 100%);
+  --grad-sun:     linear-gradient(135deg,#FFDD84 0%,#FEB813 55%,#E8A200 100%);
+
+  /* Typography scale */
+  --fs-display: 48px;
+  --fs-h1: 38px;
+  --fs-h2: 30px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-body-sm: 14px;
+  --fs-caption: 13px;
+  --fs-micro: 11px;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  --ls-display: -0.02em;
+  --ls-eyebrow: 0.18em;
+
+  /* Spacing */
+  --page-max: 1240px;
+  --section-y: 96px;
+  --section-y-mobile: 56px;
+  --card-pad: 24px;
+
+  /* Radii */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+  --r-card:    var(--r-md);
+  --r-control: var(--r-sm);
+
+  /* Shadows */
+  --sh-1:       0 1px 2px rgba(6,28,54,.06);
+  --sh-2:       0 2px 8px rgba(6,28,54,.08);
+  --sh-3:       0 8px 24px rgba(6,28,54,.10);
+  --sh-solar:   0 8px 20px rgba(232,162,0,.28);
+  --sh-inset-top: inset 0 1px 0 rgba(255,255,255,.06);
+  --ring-focus: 0 0 0 3px rgba(254,184,19,.45);
+
+  /* Motion */
+  --dur: 180ms;
+  --ease-out: cubic-bezier(.16,.84,.44,1);
+  --t-hover: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}

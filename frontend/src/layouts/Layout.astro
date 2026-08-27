@@ -1,0 +1,25 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Энергия Юга — солнечные панели в Симферополе',
+  description = 'Продажа солнечных панелей, аккумуляторов, инверторов и генераторов со склада в Симферополе. Доставка по всему Крыму.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

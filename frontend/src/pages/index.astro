@@ -1,0 +1,657 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import FeatureTile from '../components/FeatureTile.astro';
+import EnergyFlow from '../components/EnergyFlow.astro';
+import { MainForm } from '../components/Form/Form.jsx';
+
+const phone = '+7 978 272-51-24';
+const phoneDigits = '79782725124';
+const phoneHref = `tel:+${phoneDigits}`;
+const telegram = '@tazer16';
+const tgHref = 'https://t.me/tazer16';
+const cities = [
+  'Симферополь','Севастополь','Ялта','Алушта','Евпатория',
+  'Феодосия','Керчь','Судак','Саки','Бахчисарай',
+  'Джанкой','Красноперекопск','Белогорск','Щёлкино',
+];
+---
+
+<Layout>
+  <div style="max-width:100%;overflow-x:hidden">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="eu-container header-inner">
+        <img src="/assets/logo-lockup.png" alt="Энергия Юга" class="logo" />
+        <a href={phoneHref} class="btn-solar header-btn">
+          <Icon name="phone" size={16} />
+          <span>Позвонить</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="eu-container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow" style="color:var(--solar-400)">
+            Солнечные решения для вашей независимости
+          </span>
+          <h1 class="hero-h1">Солнце уже работает на ваш дом</h1>
+          <p class="hero-desc">
+            Продаём панели, аккумуляторы, инверторы и генераторы со склада
+            в Симферополе. Доставка по всему Крыму, монтаж — по желанию.
+          </p>
+          <div class="hero-ctas">
+            <a href={phoneHref} class="btn-solar hero-cta-primary">
+              <Icon name="phone" size={20} />
+              <span>{phone}</span>
+            </a>
+            <a href="#zayavka" class="btn-outline hero-cta-secondary">
+              Оставить заявку — перезвоним
+            </a>
+          </div>
+          <div class="hero-note">
+            <Icon name="clock" size={14} />
+            <span>Ежедневно 8:00 — 20:00 · Telegram {telegram}</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-wrap">
+            <img src="/assets/photo-system.png" alt="Солнечная система" class="hero-photo" />
+          </div>
+          <EnergyFlow />
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-title">Склад</div>
+              <div class="stat-sub">в Симферополе, забрать сегодня</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-title">Весь Крым</div>
+              <div class="stat-sub">доставка оборудования</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОБОРУДОВАНИЕ -->
+    <section class="section section-light">
+      <div class="eu-container">
+        <div class="section-header">
+          <span class="eyebrow">Оборудование в наличии</span>
+          <h2>Оборудование для солнечной системы</h2>
+          <p class="section-lead">
+            Подбираем комплект под вашу крышу и потребление.
+            Цену и наличие говорим по телефону — они зависят от мощности и модели.
+          </p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-photo">
+              <img src="/assets/photo-panels.png" alt="Солнечные панели" />
+            </div>
+            <div class="product-info">
+              <h3>Солнечные панели</h3>
+              <p>Монокристалл 400–700 Вт для скатных и плоских крыш. Расчёт количества по вашему счёту за свет.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-photo product-photo-contain">
+              <img src="/assets/photo-battery.png" alt="Аккумуляторы" />
+            </div>
+            <div class="product-info">
+              <h3>Аккумуляторы</h3>
+              <p>Литиевые LiFePO4 на 5–20 кВт·ч. Держат дом при отключении сети без генератора.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-photo product-photo-contain">
+              <img src="/assets/photo-inverter.png" alt="Инверторы" />
+            </div>
+            <div class="product-info">
+              <h3>Инверторы</h3>
+              <p>Гибридные и сетевые, 3–12 кВт, с переключением на сеть и мониторингом с телефона.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-photo">
+              <img src="/assets/photo-kit.png" alt="Готовые комплекты" />
+            </div>
+            <div class="product-info">
+              <h3>Готовые комплекты</h3>
+              <p>Панели, инвертор, аккумулятор и крепления одним счётом — под дом, дачу или магазин.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-photo product-photo-contain">
+              <img src="/assets/photo-generator.png" alt="Генераторы" />
+            </div>
+            <div class="product-info">
+              <h3>Генераторы и резерв</h3>
+              <p>Резервное питание в дополнение к солнцу — для объектов, которым нельзя останавливаться.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-photo">
+              <img src="/assets/photo-parts.png" alt="Крепления" />
+            </div>
+            <div class="product-info">
+              <h3>Крепления и комплектующие</h3>
+              <p>Профиль, кабель, контроллеры и автоматика — чтобы не искать мелочи по другим магазинам.</p>
+            </div>
+          </div>
+          <FeatureTile icon="shield-check" title="Монтаж и сервис">
+            Дополнительная услуга: ставим своей бригадой и обслуживаем систему потом.
+          </FeatureTile>
+        </div>
+        <div class="cta-banner">
+          <span>Не знаете, что нужно именно вам? Назовите площадь и счёт за свет — подберём комплект и скажем цену.</span>
+          <a href={phoneHref} class="btn-dark" style="height:48px;padding:0 20px;font-size:15px">
+            <Icon name="phone" size={18} />
+            <span>{phone}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК КУПИТЬ -->
+    <section class="section section-subtle">
+      <div class="eu-container">
+        <h2 class="steps-title">Как купить</h2>
+        <div class="steps-grid">
+          <FeatureTile icon="phone" title="Звонок или заявка" step={1}>
+            Спрашиваем площадь, потребление и задачу: автономия, резерв или экономия.
+          </FeatureTile>
+          <FeatureTile icon="wallet" title="Подбор и счёт" step={2}>
+            Считаем мощность по вашим счетам, а не по средним значениям. Список оборудования и цену присылаем письменно.
+          </FeatureTile>
+          <FeatureTile icon="download" title="Отгрузка со склада" step={3}>
+            Забираете в Симферополе или отправляем по Крыму. Ходовые позиции есть в наличии.
+          </FeatureTile>
+          <FeatureTile icon="circle-check" title="Монтаж — если нужен" step={4}>
+            Ставим сами, своей бригадой, за 3–5 дней. Или консультируем, если монтируете своими силами.
+          </FeatureTile>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОЧЕМУ МЫ -->
+    <section class="section section-inverse">
+      <div class="eu-container why-grid">
+        <div class="why-left">
+          <span class="eyebrow" style="color:var(--solar-400)">Почему нас выбирают</span>
+          <h2 style="color:var(--n-0)">Оборудование есть на складе</h2>
+          <p style="color:rgba(255,255,255,.7);font-size:15px;line-height:1.6;max-width:44ch">
+            Мы продаём то, что лежит на складе в Симферополе: не нужно ждать
+            поставку месяцами и переплачивать за срочность.
+          </p>
+          <a href="#zayavka" class="btn-solar why-cta">Оставить заявку</a>
+        </div>
+        <div class="why-right">
+          <div class="why-card">
+            <span class="why-icon">
+              <Icon name="shield-check" size={22} />
+            </span>
+            <div>
+              <h3 style="color:var(--n-0);margin-bottom:6px">Проверенные модели, а не случайные партии</h3>
+              <p style="color:rgba(255,255,255,.72);font-size:14px;line-height:1.6">
+                Держим на складе то, что уже отработало на объектах в Крыму.
+                Гарантия производителя и документы на каждую позицию.
+              </p>
+            </div>
+          </div>
+          <div class="why-card">
+            <span class="why-icon">
+              <Icon name="clock" size={22} />
+            </span>
+            <div>
+              <h3 style="color:var(--n-0);margin-bottom:6px">Склад в Симферополе</h3>
+              <p style="color:rgba(255,255,255,.72);font-size:14px;line-height:1.6">
+                Панели, инверторы и аккумуляторы можно забрать сразу.
+                По Крыму отправляем транспортной или своей машиной.
+              </p>
+            </div>
+          </div>
+          <div class="why-card">
+            <span class="why-icon">
+              <Icon name="user" size={22} />
+            </span>
+            <div>
+              <h3 style="color:var(--n-0);margin-bottom:6px">Монтаж — если нужен</h3>
+              <p style="color:rgba(255,255,255,.72);font-size:14px;line-height:1.6">
+                Своя бригада, без субподряда, гарантия на монтаж.
+                Но покупать систему с установкой не обязательно.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КРЫМ -->
+    <section class="section section-light">
+      <div class="eu-container">
+        <div class="section-header">
+          <span class="eyebrow">География работ</span>
+          <h2>Работаем по всему Крыму</h2>
+          <p class="section-lead">
+            Склад в Симферополе, оборудование отправляем по всему полуострову.
+            Не нашли свой город — позвоните, скажем сроки доставки.
+          </p>
+        </div>
+        <div class="cities-wrap">
+          {cities.map(city => (
+            <span class="city-tag">{city}</span>
+          ))}
+        </div>
+        <div class="cta-banner cta-solar">
+          <span style="color:var(--navy-900)">
+            Крымское солнце даёт больше выработки, чем в среднем по стране —
+            окупаемость считаем по вашим счетам.
+          </span>
+          <a href={phoneHref} class="btn-dark" style="height:48px;padding:0 20px;font-size:15px">
+            <Icon name="phone" size={18} />
+            <span>{phone}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОРМА -->
+    <section class="section section-subtle" id="zayavka" style="scroll-margin-top:70px">
+      <div class="eu-container form-grid">
+        <div class="form-left">
+          <h2>Оставьте заявку на оборудование</h2>
+          <p style="font-size:15px;line-height:1.6;color:var(--text-muted);max-width:44ch">
+            Нужны только имя и телефон. Что нужно и в каком количестве — уточним
+            в разговоре и назовём цену.
+          </p>
+          <div class="form-contacts">
+            <a href={phoneHref} class="form-phone">
+              <Icon name="phone" size={22} />
+              <span>{phone}</span>
+            </a>
+            <a href={tgHref} class="form-tg">Telegram {telegram}</a>
+            <span class="form-hours">Симферополь · ежедневно 8:00 — 20:00</span>
+          </div>
+        </div>
+        <div class="form-right">
+          <MainForm phoneHref={phoneHref} client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="eu-container footer-inner">
+        <div class="footer-brand">
+          <img src="/assets/logo-lockup-inverse.png" alt="Энергия Юга" style="height:52px;width:auto;align-self:flex-start" />
+          <span style="font-size:14px;max-width:30ch;color:rgba(255,255,255,.72)">
+            Солнечные панели, аккумуляторы, инверторы и генераторы со склада
+            в Симферополе. Доставка по всему Крыму.
+          </span>
+        </div>
+        <div class="footer-contacts">
+          <span class="eyebrow" style="color:var(--solar-400)">Связаться</span>
+          <a href={phoneHref} class="footer-phone">
+            <Icon name="phone" size={18} />
+            <span>{phone}</span>
+          </a>
+          <a href={tgHref} class="footer-link">Telegram {telegram}</a>
+          <a href="#zayavka" class="footer-link">Оставить заявку</a>
+        </div>
+      </div>
+      <div class="eu-container footer-bottom">
+        <span>© 2026 Энергия Юга, Симферополь</span>
+        <span>Солнечные решения для вашей независимости</span>
+      </div>
+      <div class="sticky-bar-spacer"></div>
+    </footer>
+
+    <!-- STICKY BAR -->
+    <div class="sticky-bar">
+      <div class="sticky-bar-inner">
+        <a href={phoneHref} class="sticky-call">
+          <Icon name="phone" size={18} />
+          <span>Позвонить</span>
+        </a>
+        <a href="#zayavka" class="btn-ghost-navy sticky-form">Заявка</a>
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<style>
+/* ── HEADER ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo { height: 34px; width: auto; }
+.header-btn { height: 40px; padding: 0 16px; font-size: 14px; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--grad-night);
+  color: var(--n-0);
+  padding: clamp(36px,9vw,88px) 0 clamp(32px,7vw,72px);
+}
+.hero-grid {
+  display: grid;
+  gap: clamp(28px,5vw,56px);
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  align-items: center;
+}
+.hero-text { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(32px,8.4vw,60px);
+  color: var(--n-0);
+}
+.hero-desc {
+  font-size: clamp(15px,4vw,19px);
+  line-height: 1.55;
+  color: rgba(255,255,255,.74);
+  max-width: 38ch;
+}
+.hero-ctas { display: flex; flex-direction: column; gap: 10px; }
+.hero-cta-primary {
+  height: 56px;
+  padding: 0 24px;
+  font-size: clamp(17px,4.6vw,20px);
+  font-family: var(--font-display);
+}
+.hero-cta-secondary { height: 52px; padding: 0 24px; font-size: 15px; }
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+}
+.hero-visual { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.hero-photo-wrap {
+  position: relative;
+  height: clamp(200px,52vw,300px);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-inverse);
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-stats {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+}
+.stat-card {
+  padding: 16px;
+  border-radius: var(--r-card);
+  background: var(--navy-800);
+  border: 1px solid var(--border-inverse);
+  box-shadow: var(--sh-inset-top);
+}
+.stat-title { font-family: var(--font-display); font-weight: 900; font-size: 26px; color: var(--n-0); }
+.stat-sub { font-size: 13px; color: rgba(255,255,255,.62); margin-top: 4px; }
+
+/* ── SECTIONS ── */
+.section { padding: clamp(44px,9vw,96px) 0; }
+.section-light { background: var(--surface-page); }
+.section-subtle { background: var(--surface-subtle); }
+.section-inverse { background: var(--surface-inverse); color: var(--n-0); }
+.section-header { display: flex; flex-direction: column; gap: 10px; margin-bottom: clamp(20px,4vw,32px); }
+.section-header h2 {
+  font-weight: 900;
+  font-size: clamp(26px,6.4vw,40px);
+}
+.section-lead { font-size: 15px; line-height: 1.55; color: var(--text-muted); max-width: 56ch; }
+
+/* ── PRODUCTS ── */
+.product-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,250px),1fr));
+  margin-bottom: 16px;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-card);
+  background: var(--n-0);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--sh-1);
+}
+.product-photo {
+  position: relative;
+  height: 180px;
+  background: var(--surface-subtle);
+  overflow: hidden;
+}
+.product-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-photo-contain img { object-fit: contain; padding: 14px; }
+.product-info { padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.product-info h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--text-strong); }
+.product-info p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--r-card);
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  font-size: 15px;
+  color: var(--text-body);
+  margin-top: 16px;
+}
+.cta-banner span { flex: 1 1 220px; }
+.cta-solar {
+  background: var(--surface-accent-soft);
+  border-color: var(--solar-300);
+}
+
+/* ── STEPS ── */
+.steps-title { font-weight: 900; font-size: clamp(26px,6.4vw,40px); margin-bottom: clamp(20px,4vw,32px); }
+.steps-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,230px),1fr));
+}
+
+/* ── WHY ── */
+.why-grid {
+  display: grid;
+  gap: clamp(24px,5vw,48px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,300px),1fr));
+}
+.why-left { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.why-left h2 { font-size: clamp(26px,6.4vw,40px); font-weight: 900; }
+.why-cta { height: 52px; padding: 0 22px; font-size: 15px; align-self: flex-start; }
+.why-right { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.why-card {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  border-radius: var(--r-card);
+  background: var(--navy-800);
+  border: 1px solid var(--border-inverse);
+  box-shadow: var(--sh-inset-top);
+}
+.why-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(254,184,19,.14);
+  color: var(--solar-500);
+}
+.why-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.3; }
+
+/* ── CITIES ── */
+.cities-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.city-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--r-pill);
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+/* ── FORM SECTION ── */
+.form-grid {
+  display: grid;
+  gap: clamp(24px,5vw,48px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,300px),1fr));
+  align-items: start;
+}
+.form-left { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.form-left h2 { font-size: clamp(26px,6.4vw,40px); font-weight: 900; }
+.form-contacts { display: flex; flex-direction: column; gap: 10px; }
+.form-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px,5.6vw,28px);
+  color: var(--navy-900);
+  transition: var(--t-hover);
+}
+.form-phone:hover { color: var(--solar-700); }
+.form-tg { font-size: 15px; color: var(--text-muted); }
+.form-tg:hover { color: var(--solar-700); }
+.form-hours { font-size: 13px; color: var(--text-faint); }
+.form-right { min-width: 0; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--grad-night);
+  color: rgba(255,255,255,.72);
+  padding: clamp(32px,7vw,64px) 0 28px;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.footer-contacts { display: flex; flex-direction: column; gap: 8px; }
+.footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--n-0);
+  transition: var(--t-hover);
+}
+.footer-phone:hover { color: var(--solar-400); }
+.footer-link { font-size: 14px; color: rgba(255,255,255,.72); transition: var(--t-hover); }
+.footer-link:hover { color: var(--solar-400); }
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-inverse);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+}
+
+/* ── STICKY BAR ── */
+.sticky-bar-spacer { height: 88px; }
+.sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 10px clamp(12px,4vw,20px) calc(10px + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+.sticky-bar-inner {
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: var(--r-pill);
+  background: rgba(6,28,54,.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 48px rgba(6,28,54,.34);
+  pointer-events: auto;
+}
+.sticky-call {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: var(--r-pill);
+  background: var(--solar-500);
+  color: var(--navy-900);
+  font-weight: var(--fw-bold);
+  font-size: 15px;
+  transition: var(--t-hover);
+  text-decoration: none;
+}
+.sticky-call:hover { background: var(--solar-400); color: var(--navy-900); }
+.sticky-form {
+  flex: 1 1 0;
+  height: 48px;
+  font-size: 15px;
+}
+</style>

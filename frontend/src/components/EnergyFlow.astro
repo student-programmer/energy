@@ -1,0 +1,104 @@
+---
+/* Energy flow diagram: Sun → Panels → Inverter → Battery → House */
+---
+<div class="flow">
+  <div class="flow-node active">
+    <div class="node-icon sun">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+      </svg>
+    </div>
+    <span class="node-label">Солнце</span>
+  </div>
+  <div class="flow-line"></div>
+  <div class="flow-node">
+    <div class="node-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+      </svg>
+    </div>
+    <span class="node-label">Панели</span>
+  </div>
+  <div class="flow-line"></div>
+  <div class="flow-node">
+    <div class="node-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+    </div>
+    <span class="node-label">Инвертор</span>
+  </div>
+  <div class="flow-line"></div>
+  <div class="flow-node">
+    <div class="node-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+      </svg>
+    </div>
+    <span class="node-label">Аккумулятор</span>
+  </div>
+  <div class="flow-line"></div>
+  <div class="flow-node active">
+    <div class="node-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </div>
+    <span class="node-label">Ваш дом</span>
+  </div>
+</div>
+
+<style>
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 16px 12px;
+  border-radius: var(--r-card);
+  background: var(--navy-800);
+  border: 1px solid var(--border-inverse);
+  overflow-x: auto;
+}
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.node-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.flow-node.active .node-icon {
+  background: rgba(254,184,19,.18);
+  color: var(--solar-400);
+}
+.node-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  text-align: center;
+}
+.flow-node.active .node-label {
+  color: var(--solar-400);
+  font-weight: var(--fw-bold);
+}
+.flow-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(254,184,19,.4), rgba(254,184,19,.15));
+  margin: 0 4px;
+  margin-bottom: 20px;
+  min-width: 16px;
+}
+</style>

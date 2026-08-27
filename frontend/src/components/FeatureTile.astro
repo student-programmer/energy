@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  title: string;
+  step?: number;
+}
+const { icon, title, step } = Astro.props;
+---
+<div class="tile">
+  <div class="tile-top">
+    {step !== undefined && <span class="step">{step}</span>}
+    <span class="icon-wrap">
+      <Icon name={icon} size={22} />
+    </span>
+  </div>
+  <h3 class="tile-title">{title}</h3>
+  <p class="tile-desc"><slot /></p>
+</div>
+
+<style>
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--r-card);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--sh-1);
+}
+.tile-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--solar-500);
+  color: var(--navy-900);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-wrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--surface-accent-soft);
+  color: var(--solar-700);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.tile-title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 17px;
+  color: var(--text-strong);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.tile-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+</style>

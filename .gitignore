@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+backend/config/config.json
+frontend/.astro/
+
+# Лишнее в корне
+nginx-server.conf
+extracted_template.html
+zip_extracted/
+*.zip
+*.html
+README.md

@@ -1,0 +1,7 @@
+{
+  "telegram": {
+    "token": "YOUR_BOT_TOKEN_HERE",
+    "chat": "YOUR_CHAT_ID_HERE",
+    "secretKey": "your-session-secret-key"
+  }
+}
