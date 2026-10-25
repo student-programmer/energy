@@ -102,6 +102,31 @@
 .submit:active:not(:disabled) { transform: scale(0.98); }
 .submit:disabled { opacity: 0.65; cursor: not-allowed; }
 
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.consentCheck {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--solar-500);
+  cursor: pointer;
+}
+.consentText {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.consentLink {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+.consentLink:hover { color: var(--text-link-hover); }
+
 .privacy {
   font-size: 13px;
   line-height: 1.5;

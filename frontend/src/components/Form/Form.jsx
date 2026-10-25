@@ -117,6 +117,21 @@ export const MainForm = ({ phoneHref }) => {
           {errors.phone && <span className={s.error}>{errors.phone.message}</span>}
         </div>
 
+        <label className={s.consentLabel}>
+          <input
+            type="checkbox"
+            className={s.consentCheck}
+            {...register('consent', { required: 'Необходимо согласие на обработку данных' })}
+          />
+          <span className={s.consentText}>
+            Я согласен(а) на обработку персональных данных в соответствии с{' '}
+            <a href="/privacy" target="_blank" rel="noopener" className={s.consentLink}>
+              Политикой конфиденциальности
+            </a>
+          </span>
+        </label>
+        {errors.consent && <span className={s.error}>{errors.consent.message}</span>}
+
         <button type="submit" className={s.submit} disabled={loading}>
           {loading ? 'Отправляем...' : 'Отправить заявку'}
         </button>

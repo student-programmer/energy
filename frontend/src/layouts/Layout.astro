@@ -18,20 +18,54 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112303080', 'ym');
-      ym(112303080, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    <script>
+      (function() {
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112303080','ym');
+          ym(112303080,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+        }
+      })();
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/112303080" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
   </head>
   <body>
     <slot />
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a1929;border-top:1px solid rgba(255,255,255,.12);padding:16px clamp(16px,4vw,32px);">
+      <div style="max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
+        <p style="margin:0;flex:1 1 300px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.82);">
+          Мы используем аналитические cookies (Яндекс.Метрика) для улучшения сайта.
+          Необходимые cookies (сохранение вашего выбора) работают всегда.
+          <a href="/privacy#13" style="color:#feb813;white-space:nowrap;">Подробнее</a>
+        </p>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button id="cookie-accept" style="height:38px;padding:0 18px;background:#feb813;color:#0a1929;font-weight:700;font-size:14px;border:none;border-radius:8px;cursor:pointer;">Принять</button>
+          <button id="cookie-decline" style="height:38px;padding:0 18px;background:transparent;color:rgba(255,255,255,.72);font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,.28);border-radius:8px;cursor:pointer;">Отклонить</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var consent = localStorage.getItem('cookie_consent');
+        if (!consent) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+        function loadMetrika() {
+          if (window.ym) return;
+          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112303080','ym');
+          ym(112303080,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+        }
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          document.getElementById('cookie-banner').style.display = 'none';
+          loadMetrika();
+        });
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+      })();
+    </script>
   </body>
 </html>
